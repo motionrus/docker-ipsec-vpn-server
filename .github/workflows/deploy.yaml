@@ -36,7 +36,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd autograb
+            cd docker-ipsec-vpn-server
             rm -f .env
             touch .env
             echo ${{ secrets.ENV }} >> vpn.env
@@ -50,7 +50,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             sudo docker volume create --name=db_volume
-            cd autograb
+            cd docker-ipsec-vpn-server
             sudo docker-compose down
             sudo docker-compose pull
             sudo docker-compose up -d
