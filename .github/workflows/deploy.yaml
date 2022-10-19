@@ -22,7 +22,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            if [ ! -d "autograb" ]; then
+            if [ ! -d "docker-ipsec-vpn-server" ]; then
                 git clone https://${{ secrets.TOKEN }}@github.com/motionrus/docker-ipsec-vpn-server.git;
             fi
             cd docker-ipsec-vpn-server
