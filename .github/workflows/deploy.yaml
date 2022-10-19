@@ -49,7 +49,6 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            sudo docker volume create --name=db_volume
             cd docker-ipsec-vpn-server
             sudo docker-compose down
             sudo docker-compose pull
