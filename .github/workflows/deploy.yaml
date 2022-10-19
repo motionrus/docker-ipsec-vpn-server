@@ -37,9 +37,9 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd docker-ipsec-vpn-server
-            rm -f .env
-            touch .env
-            echo ${{ secrets.ENV }} >> vpn.env
+            cat << EOF > vpn.env
+            ${{ secrets.ENV }}
+            EOF
             
       - name: Docker Compose Restart
         uses: appleboy/ssh-action@master
